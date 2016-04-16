@@ -61,6 +61,21 @@ public class InsertionSort extends AbstractSortTemplate {
 
     }
 
+    public void sort(Comparable[] a,int low,int high) {
+        /*
+        插入排序就像是抽扑克牌，抽到一张牌就直接把它放到适合的位置  1245，3
+         */
+        for (int i = low+1; i < high; i++) {//对抓到的第i张牌插入
+            for (int j = i; j > 0; j--) {//找到合适插入的位置插入
+                if (less(a[j], a[j - 1])) {
+                    exch(a, j, j - 1);
+                }
+            }
+        }
+
+
+    }
+
     /**
      * 自己对插入排序的理解，感觉这才像真正的抓扑克牌
      * 与传统的排序算法相比，比较次数平均少了一半
